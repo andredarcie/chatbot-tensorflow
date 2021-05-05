@@ -1,0 +1,24 @@
+{
+    "questoes": [
+                    {
+                        "tag": "pagamentos",
+                        "padroes": ["Voces aceitam cartao de credito?", "Posso pagar com cartao?" ],
+                        "respostas": ["Nos aceitamos Nubank e PIX apenas", "Sim aceitamos cartoes de credito"]
+                    },
+                    {  
+                        "tag": "despedida",
+                        "padroes": ["Tchau", "Ate mais", "abracos"],
+                        "respostas": ["Até mais!", "Até, um abraço.", "Tenha um otimo dia!"]
+                    },
+                    {
+                        "tag": "agradecimento",
+                        "padroes": ["Obrigado", "Obrigado pela ajuda", "Muito obrgado"],
+                        "respostas": ["De nada!", "Fico feliz em ajudar!", "Disponha"]
+                    },
+                    {
+                        "tag": "horario",
+                        "padroes": ["Que horas abre a loja?", "Voce abrem que horas?", "Qual o horario de funcionamento" ],
+                        "respostas": ["Nosso horario e das 08h as 18h", "Estamos abertos das 08h as 18h"]
+                    }
+              ]
+}
