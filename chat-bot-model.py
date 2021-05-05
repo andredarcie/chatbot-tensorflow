@@ -56,3 +56,38 @@ for documento in documentos:
 
 print("Treinamento:")
 print(treinamento)
+
+# Embaralha os dados de treinamento
+random.shuffle(treinamento)
+treinamento = np.array(treinamento)
+
+treinamento_x = list(treinamento[:, 0]) # palavras padrão
+treinamento_y = list(treinamento[:, 1]) # tags
+
+# Limpa a pilha de gráficos padrão e redefine o gráfico padrão global.
+tf.reset_default_graph()
+
+# Constroi a rede neural
+rede_neural = tflearn.input_data(shape=[None, len(treinamento_x[0])])
+rede_neural = tflearn.fully_connected(rede_neural, 8)
+rede_neural = tflearn.fully_connected(rede_neural, 8)
+rede_neural = tflearn.fully_connected(rede_neural, len(treinamento_y[0]), activation='softmax')
+rede_neural = tflearn.regression(rede_neural)
+
+# Configurar o tensorboard
+modelo = tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
+
+# Treina o modelo
+modelo.fit(treinamento_x, treinamento_y, n_epoch=5000, batch_size=8, show_metric=True)
+
+model.save('model.tflearn')
+
+def limpar_frase(frase):
+    palavras_da_frase = nltk.word_tokenize(frase)
+    palavras_da_frase = [stemmer.stem(palavra.lower()) for palavra in palavras_da_frase]
+    return palavras_da_frase
+
+def pega_bolsa_de_palavras(frase, palavras, show_details=False):
+    palavras_da_frase = limpar_frase(frase)
+
+    bolsa_de_palavras = [0] * len(palavras)
