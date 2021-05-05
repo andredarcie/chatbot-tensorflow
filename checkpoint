@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\02_PosDataScience\\chatbot-tensorflow\\chatbot-tensorflow\\model.tflearn"
+all_model_checkpoint_paths: "D:\\02_PosDataScience\\chatbot-tensorflow\\chatbot-tensorflow\\model.tflearn"

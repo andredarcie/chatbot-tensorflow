@@ -61,33 +61,68 @@ print(treinamento)
 random.shuffle(treinamento)
 treinamento = np.array(treinamento)
 
-treinamento_x = list(treinamento[:, 0]) # palavras padrão
-treinamento_y = list(treinamento[:, 1]) # tags
+treinamento_x = list(treinamento[:, 0])  # palavras padrão
+treinamento_y = list(treinamento[:, 1])  # tags
 
 # Limpa a pilha de gráficos padrão e redefine o gráfico padrão global.
-tf.reset_default_graph()
+# tf.reset_default_graph()
+tf.compat.v1.reset_default_graph()
 
-# Constroi a rede neural
-rede_neural = tflearn.input_data(shape=[None, len(treinamento_x[0])])
-rede_neural = tflearn.fully_connected(rede_neural, 8)
-rede_neural = tflearn.fully_connected(rede_neural, 8)
-rede_neural = tflearn.fully_connected(rede_neural, len(treinamento_y[0]), activation='softmax')
-rede_neural = tflearn.regression(rede_neural)
 
-# Configurar o tensorboard
-modelo = tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
+def cria_rede_neural():
+    rede_neural = tflearn.input_data(shape=[None, len(treinamento_x[0])])
+    rede_neural = tflearn.fully_connected(rede_neural, 8)
+    rede_neural = tflearn.fully_connected(rede_neural, 8)
+    rede_neural = tflearn.fully_connected(
+        rede_neural, len(treinamento_y[0]), activation='softmax')
+    rede_neural = tflearn.regression(rede_neural)
 
-# Treina o modelo
-modelo.fit(treinamento_x, treinamento_y, n_epoch=5000, batch_size=8, show_metric=True)
+    # Configurar o tensorboard
+    modelo = tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
 
-model.save('model.tflearn')
+    # Treina o modelo
+    modelo.fit(treinamento_x, treinamento_y, n_epoch=5000,
+               batch_size=8, show_metric=True)
+
+    modelo.save('model.tflearn')
+    return modelo
+
 
 def limpar_frase(frase):
     palavras_da_frase = nltk.word_tokenize(frase)
-    palavras_da_frase = [stemmer.stem(palavra.lower()) for palavra in palavras_da_frase]
+    palavras_da_frase = [stemmer.stem(palavra.lower())
+                         for palavra in palavras_da_frase]
     return palavras_da_frase
+
 
 def pega_bolsa_de_palavras(frase, palavras, show_details=False):
     palavras_da_frase = limpar_frase(frase)
 
     bolsa_de_palavras = [0] * len(palavras)
+    for palavra_da_frase in palavras_da_frase:
+        for index, palavra in enumerate(palavras):
+            if palavra == palavra_da_frase:
+                bolsa_de_palavras[index] = 1
+                if show_details:
+                    print("achou na bolsa: ", palavra)
+
+    return(np.array(bolsa_de_palavras))
+
+
+modelo = cria_rede_neural()
+
+LIMITE_DE_ERRO = 0.25
+
+
+def classifica_frase(frase):
+    resultados = modelo.predict([pega_bolsa_de_palavras(frase, palavras)])[0]
+    resultados = [[i, resultado]
+                  for i, resultado in enumerate(resultados) if resultado > LIMITE_DE_ERRO]
+    resultados.sort(key=lambda resultado: resultado[1], reverse=True)
+    lista_de_resultados = []
+    for resultado in resultados:
+        lista_de_resultados.append((classes[resultado[0]], resultado[1]))
+    return lista_de_resultados
+
+
+print(classifica_frase("Voces aceitam cartao de credito?"))
