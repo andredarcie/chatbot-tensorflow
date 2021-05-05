@@ -12,7 +12,7 @@
                     },
                     {
                         "tag": "agradecimento",
-                        "padroes": ["Obrigado", "Obrigado pela ajuda", "Muito obrgado"],
+                        "padroes": ["Obrigado", "Obrigado pela ajuda", "Muito obrigado"],
                         "respostas": ["De nada!", "Fico feliz em ajudar!", "Disponha"]
                     },
                     {
