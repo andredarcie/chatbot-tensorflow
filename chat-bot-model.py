@@ -4,6 +4,7 @@ import tensorflow as tf
 import tflearn
 import numpy as np
 import nltk
+from nltk.corpus import stopwords
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
@@ -15,7 +16,8 @@ with open('data.json') as json_data:
 palavras = []
 classes = []
 documentos = []
-palavras_ignoradas = ['?']
+palavras_ignoradas = stopwords.words('portuguese')
+print(palavras_ignoradas)
 
 for questao in data['questoes']:
     for padrao in questao['padroes']:
@@ -79,14 +81,19 @@ def cria_rede_neural():
 
     # Configurar o tensorboard
     modelo = tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
-
-    # Treina o modelo
-    modelo.fit(treinamento_x, treinamento_y, n_epoch=5000,
-               batch_size=8, show_metric=True)
-
-    modelo.save('model.tflearn')
     return modelo
 
+def treina_rede_neural(modelo):
+    modelo.fit(treinamento_x, treinamento_y, n_epoch=5000,
+               batch_size=8, show_metric=True)
+    return modelo
+
+def salva_rede_neural(modelo):
+    modelo.save('model.tflearn')
+
+def carrega_rede_neural(modelo):
+    modelo.load('./model.tflearn')
+    return modelo
 
 def limpar_frase(frase):
     palavras_da_frase = nltk.word_tokenize(frase)
@@ -108,13 +115,9 @@ def pega_bolsa_de_palavras(frase, palavras, show_details=False):
 
     return(np.array(bolsa_de_palavras))
 
-
-modelo = cria_rede_neural()
-
 LIMITE_DE_ERRO = 0.25
 
-
-def classifica_frase(frase):
+def classifica_frase(frase, modelo):
     resultados = modelo.predict([pega_bolsa_de_palavras(frase, palavras)])[0]
     resultados = [[i, resultado]
                   for i, resultado in enumerate(resultados) if resultado > LIMITE_DE_ERRO]
@@ -124,5 +127,20 @@ def classifica_frase(frase):
         lista_de_resultados.append((classes[resultado[0]], resultado[1]))
     return lista_de_resultados
 
+def encontra_resposta(tag_encontrada):
+    for questao in data['questoes']:
+        if questao['tag'] == tag_encontrada:
+            return questao['respostas'][0]
 
-print(classifica_frase("Voces aceitam cartao de credito?"))
+    return 'Não entendi sua pergunta'
+
+modelo = cria_rede_neural()
+modelo = treina_rede_neural(modelo)
+salva_rede_neural(modelo)
+modelo = carrega_rede_neural(modelo)
+
+while True:
+    pergunta = input("Digite sua pergunta: ")
+    tag_encontrada = classifica_frase(pergunta, modelo)[0][0]
+    resposta = encontra_resposta(tag_encontrada)
+    print(resposta)
