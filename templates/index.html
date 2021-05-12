@@ -6,38 +6,60 @@
 {% block content %}
 <div class="container">
     <div class="page-header">
-        <h1>Chatbot feito em Tensorflow - Stackoverflow</h1>
+        <h1>🤖 Chatbot Especialista em Python</h1>
     </div>
     <div class="page-body">
         <form action="/" method="post" class="form">
         {{ form.csrf_token }}
         <div class="row">
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-6" style="padding-right: 0;">
                 {{ wtf.form_field(form.mensagem, class='form-control') }}
             </div>       
-        
-            <div class="col-md-3">
+            <div class="col-md-6" style="padding-left: 0; margin-top: 25px;">
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
-
-<div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-        aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-</div>
-
-        <div class="col-md-12">
-            {% if resposta == 'No-response' %}
-                <h2> Aguardando... </h2>
-            {% else %}
-                <ul class="list-group">
-                    {% for r in resposta %}
-                        <li class="list-group-item"> {{ r }} </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
+        <div class="row">
+            <p>Reposta:</p>
+            <div class="col-md-12">
+                {% if resposta == 'No-response' %}
+                    <h2> Aguardando... </h2>
+                {% else %}
+                    <ul class="list-group">
+                        {% for r in resposta %}
+                            <li class="list-group-item"> {{ r }} </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
         </div>
+        <h2>Como foi desenvolvido?</h2>
+        <ul>
+            <li>
+                Foi realizado o pré-processamento dos textos de perguntas e respostas do <a href="https://stackoverflow.com/">Stackoverflow</a> que se encontra no <a href="https://www.kaggle.com/stackoverflow/pythonquestions">Kaggle</a> utilizando-se de tecnicas 
+                de Processamento de Língua Natural (PLN)
+            </li>
+            <li>
+                Através da biblioteca de código aberto <a href="https://www.tensorflow.org/">TensorFlow</a> treinamos a rede neural profunda para encontrar padrões e correlações
+                na base de dados processada
+            </li>
+            <li>
+               Salvamos o modelo treinado e criamos uma aplicação web para fazer uso desse modelo e responder a perguntas de maneira inteligente
+            </li>
+        </ul>
+        <h2>Sobre o chatbot</h2>
+        <ul>
+            <li>
+                Foi desenvolvido pelo estudantes de pós-gradução <a href="https://github.com/andredarcie">André N. Darcie</a> e <a href="https://github.com/crisslemoss">Cristiane Lemos</a> para a diciplina de Processamento de Linguagens Naturais no curso de 
+                Ciencia de Dados Aplicada na PUC Minas
+            </li>
+            <li>
+                O projeto é de código aberto e seu repositorio pode ser encontrado no Github nesse <a href="https://github.com/andredarcie/chatbot-tensorflow">endereço</a>
+            </li>
+            <li>
+                Treinamos apenas uma parte dos dados por questões de custo e tempo, mas o modelo pode ser treinado com o conjunto total de dados
+            </li>
+        <ul>
     </div>
 </div>
 {% endblock %}
