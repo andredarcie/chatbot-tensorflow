@@ -12,20 +12,30 @@
         <form action="/" method="post" class="form">
         {{ form.csrf_token }}
         <div class="row">
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-9">
                 {{ wtf.form_field(form.mensagem, class='form-control') }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+            </div>       
+        
+            <div class="col-md-3">
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
-        <div class="col-md-4">
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+        aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+</div>
+
+        <div class="col-md-12">
             {% if resposta == 'No-response' %}
                 <h2> Aguardando... </h2>
             {% else %}
-                <p> {{ resposta }} </p>
+                <ul class="list-group">
+                    {% for r in resposta %}
+                        <li class="list-group-item"> {{ r }} </li>
+                    {% endfor %}
+                </ul>
             {% endif %}
         </div>
     </div>
