@@ -17,6 +17,7 @@ palavras = []
 classes = []
 documentos = []
 palavras_ignoradas = stopwords.words('portuguese')
+modelo = None
 print(palavras_ignoradas)
 
 for questao in data['questoes']:
@@ -80,20 +81,17 @@ def cria_rede_neural():
     rede_neural = tflearn.regression(rede_neural)
 
     # Configurar o tensorboard
-    modelo = tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
-    return modelo
+    return tflearn.DNN(rede_neural, tensorboard_dir='tflearn_logs')
 
-def treina_rede_neural(modelo):
+def treina_rede_neural():
     modelo.fit(treinamento_x, treinamento_y, n_epoch=5000,
                batch_size=8, show_metric=True)
-    return modelo
 
-def salva_rede_neural(modelo):
+def salva_rede_neural():
     modelo.save('model.tflearn')
 
-def carrega_rede_neural(modelo):
+def carrega_rede_neural():
     modelo.load('./model.tflearn')
-    return modelo
 
 def limpar_frase(frase):
     palavras_da_frase = nltk.word_tokenize(frase)
@@ -117,7 +115,7 @@ def pega_bolsa_de_palavras(frase, palavras, show_details=False):
 
 LIMITE_DE_ERRO = 0.25
 
-def classifica_frase(frase, modelo):
+def classifica_frase(frase):
     resultados = modelo.predict([pega_bolsa_de_palavras(frase, palavras)])[0]
     resultados = [[i, resultado]
                   for i, resultado in enumerate(resultados) if resultado > LIMITE_DE_ERRO]
@@ -135,12 +133,12 @@ def encontra_resposta(tag_encontrada):
     return 'Não entendi sua pergunta'
 
 modelo = cria_rede_neural()
-modelo = treina_rede_neural(modelo)
-salva_rede_neural(modelo)
-modelo = carrega_rede_neural(modelo)
+#treina_rede_neural()
+#salva_rede_neural()
+carrega_rede_neural()
 
-while True:
-    pergunta = input("Digite sua pergunta: ")
-    tag_encontrada = classifica_frase(pergunta, modelo)[0][0]
-    resposta = encontra_resposta(tag_encontrada)
-    print(resposta)
+#while True:
+#    pergunta = input("Digite sua pergunta: ")
+#    tag_encontrada = classifica_frase(pergunta)[0][0]
+#    resposta = encontra_resposta(tag_encontrada)
+#    print(resposta)
