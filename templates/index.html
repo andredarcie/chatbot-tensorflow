@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+{% import  "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Sommelier Inteligente App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Chatbot feito em Tensorflow - Stackoverflow</h1>
+    </div>
+    <div class="page-body">
+        <form action="/" method="post" class="form">
+        {{ form.csrf_token }}
+        <div class="row">
+            <div class="form-group col-md-3">
+                {{ wtf.form_field(form.mensagem, class='form-control') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% if resposta == 'No-response' %}
+                <h2> Aguardando... </h2>
+            {% else %}
+                <p> {{ resposta }} </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
