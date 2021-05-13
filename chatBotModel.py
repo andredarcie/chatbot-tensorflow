@@ -17,7 +17,7 @@ palavras = []
 classes = []
 documentos = []
 
-palavras_ignoradas = stopwords.words('english')
+palavras_ignoradas = [ '?' ]
 
 modelo = None
 print(palavras_ignoradas)
