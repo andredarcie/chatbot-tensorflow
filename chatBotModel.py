@@ -17,9 +17,7 @@ palavras = []
 classes = []
 documentos = []
 
-# TODO: Comentado pois causou um erro de deploy no Heroku
-# palavras_ignoradas = stopwords.words('portuguese')
-palavras_ignoradas = [ '?' ]
+palavras_ignoradas = stopwords.words('english')
 
 modelo = None
 print(palavras_ignoradas)
