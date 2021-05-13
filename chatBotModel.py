@@ -16,7 +16,11 @@ with open('data.json') as json_data:
 palavras = []
 classes = []
 documentos = []
-palavras_ignoradas = stopwords.words('portuguese')
+
+# TODO: Comentado pois causou um erro de deploy no Heroku
+# palavras_ignoradas = stopwords.words('portuguese')
+palavras_ignoradas = [ '?' ]
+
 modelo = None
 print(palavras_ignoradas)
 
