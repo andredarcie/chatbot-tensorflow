@@ -2,24 +2,24 @@
     "questoes": 
     [
         {
-            "tag": "pagamentos",
-            "padroes": ["Voces aceitam cartao de credito?", "Posso pagar com cartao?" ],
-            "respostas": ["Nos aceitamos Nubank e PIX apenas", "Sim aceitamos cartoes de credito"]
+            "tag": "compilacao",
+            "padroes": ["Python é compilada?", "Python usa um compilador?" ],
+            "respostas": ["Nao Python e uma linguagem interpretada. Voce pode tambem escrever bibliotecas Python utilizando C ou C++"]
         },
         {  
-            "tag": "despedida",
-            "padroes": ["Tchau", "Ate mais", "abracos"],
-            "respostas": ["Até mais!", "Até, um abraço.", "Tenha um otimo dia!"]
+            "tag": "ferramenta",
+            "padroes": ["Qual IDE utilizar?", "Qual ferramenta usar para programar?", "Qual editor de código usar?"],
+            "respostas": ["Nao ha uma real necessidade de uma IDE complexa e cheia de recursos para programar em Python. "]
         },
         {
-            "tag": "agradecimento",
-            "padroes": ["Obrigado", "Obrigado pela ajuda", "Muito obrigado"],
-            "respostas": ["De nada!", "Fico feliz em ajudar!", "Disponha"]
+            "tag": "plataforma",
+            "padroes": ["Só roda no Linux?", "Quais sistemas operacionais Python é suportado"],
+            "respostas": ["Alem de multiplataforma e multiparadigma, com o Python voce e capaz de desenvolver para qualquer tipo de ambiente, seja desktop, web ou movel."]
         },
         {
-            "tag": "horario",
-            "padroes": ["Que horas abre a loja?", "Voce abrem que horas?", "Qual o horario de funcionamento" ],
-            "respostas": ["Nosso horario e das 08h as 18h", "Estamos abertos das 08h as 18h"]
+            "tag": "web",
+            "padroes": ["Dá pra desenvolver Web em Python?", "Consigo criar sistemas web?" ],
+            "respostas": ["Python e excelente para desenvolver Web"]
         }
     ]
 }
