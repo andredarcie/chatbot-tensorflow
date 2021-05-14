@@ -1,55 +1,6 @@
 {
     "questoes": [
         {
-            "tag": "pagamentos",
-            "padroes": [
-                "Voces aceitam cartao de credito?",
-                "Posso pagar com cartao?"
-            ],
-            "respostas": [
-                "Nos aceitamos Nubank e PIX apenas",
-                "Sim aceitamos cartoes de credito"
-            ]
-        },
-        {
-            "tag": "despedida",
-            "padroes": [
-                "Tchau",
-                "Ate mais",
-                "abracos"
-            ],
-            "respostas": [
-                "Até mais!",
-                "Até, um abraço.",
-                "Tenha um otimo dia!"
-            ]
-        },
-        {
-            "tag": "agradecimento",
-            "padroes": [
-                "Obrigado",
-                "Obrigado pela ajuda",
-                "Muito obrigado"
-            ],
-            "respostas": [
-                "De nada!",
-                "Fico feliz em ajudar!",
-                "Disponha"
-            ]
-        },
-        {
-            "tag": "horario",
-            "padroes": [
-                "Que horas abre a loja?",
-                "Voce abrem que horas?",
-                "Qual o horario de funcionamento"
-            ],
-            "respostas": [
-                "Nosso horario e das 08h as 18h",
-                "Estamos abertos das 08h as 18h"
-            ]
-        },
-        {
             "tag": "questao_469",
             "padroes": [
                 "I am using the Photoshop's javascript API to find the fonts in a given PSD.Given a font name returned by the API, I want to find the actual physical font file that that font name corresponds to on the disc.\n\nThis is all happening in a python program running on OSX so I guess I'm looking for one of:- Some Photoshop javascript- A Python function- An OSX API that I can call from python"
