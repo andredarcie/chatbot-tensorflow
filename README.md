@@ -1,5 +1,17 @@
 # Chatbot Tensorflow
 
+[Link para o ChatBot](https://stackoverflow-python-chatbot.herokuapp.com/)
+
+## Como foi desenvolvido?
+- Foi realizado o pré-processamento dos textos de perguntas e respostas do Stackoverflow que se encontra no Kaggle utilizando-se de tecnicas de Processamento de Língua Natural (PLN)
+- Através da biblioteca de código aberto TensorFlow treinamos a rede neural profunda para encontrar padrões e correlações na base de dados processada
+- Salvamos o modelo treinado e criamos uma aplicação web para fazer uso desse modelo e responder a perguntas de maneira inteligente
+
+## Sobre o chatbot
+- Foi desenvolvido pelo estudantes de pós-gradução André N. Darcie e Cristiane Lemos para a diciplina de Processamento de Linguagens Naturais no curso de Ciencia de Dados - Aplicada na PUC Minas
+- O projeto é de código aberto e seu repositorio pode ser encontrado no Github nesse endereço
+- Treinamos apenas uma parte dos dados por questões de custo e tempo, mas o modelo pode ser treinado com o conjunto total de dados
+
 ## Instalação
 
 Utilize o geranciador de pacotes [pip](https://pip.pypa.io/en/stable/) para instalar a aplicação.
