@@ -10,7 +10,11 @@
 ## Sobre o chatbot
 - Foi desenvolvido pelo estudantes de pós-gradução André N. Darcie e Cristiane Lemos para a diciplina de Processamento de Linguagens Naturais no curso de Ciencia de Dados - Aplicada na PUC Minas
 - O projeto é de código aberto e seu repositorio pode ser encontrado no Github nesse endereço
+
+## Precisão do chatbot
+- As perguntas devem ser detalhadas e feitas em inglês.
 - Treinamos apenas uma parte dos dados por questões de custo e tempo, mas o modelo pode ser treinado com o conjunto total de dados
+- A precisão do chatbot para responder as perguntas vai depender da quantidade de dados em que a rede foi treinada.
 
 ## Instalação
 
@@ -28,7 +32,7 @@ Para treinar ou carregar a rede neural:
 python chatBotModel.py
 ```
 
-Para executar o chatbot:
+Para executar o chatbot (Sempre com "modo_treino = False"):
 ```bash
 set FLASK_APP=app.py
 flask run
