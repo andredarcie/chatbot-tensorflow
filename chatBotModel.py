@@ -142,13 +142,12 @@ def encontra_resposta(tag_encontrada):
     return 'Não entendi sua pergunta'
 
 
-modelo = cria_rede_neural()
-# treina_rede_neural()
-# salva_rede_neural()
-carrega_rede_neural()
+modo_treino = False
 
-# while True:
-#    pergunta = input("Digite sua pergunta: ")
-#    tag_encontrada = classifica_frase(pergunta)[0][0]
-#    resposta = encontra_resposta(tag_encontrada)
-#    print(resposta)
+modelo = cria_rede_neural()
+
+if modo_treino:
+    treina_rede_neural()
+    salva_rede_neural()
+else:
+    carrega_rede_neural()
