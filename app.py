@@ -18,8 +18,13 @@ def index():
     resposta = 'No-response'
 
     if form.validate_on_submit():
-        tag_encontrada = classifica_frase(form.mensagem.data)[0][0]
-        resposta = encontra_resposta(tag_encontrada)
+        tags = classifica_frase(form.mensagem.data)
+
+        if len(tags) == 0:
+            resposta = [ "I did not understand your question, be a little more specific so that I can help you" ]
+        else:
+            tag_encontrada = classifica_frase(form.mensagem.data)[0][0]
+            resposta = encontra_resposta(tag_encontrada)
 
     return render_template('index.html', form=form, resposta=resposta)
 
