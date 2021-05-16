@@ -12,7 +12,6 @@
 - O projeto é de código aberto e seu repositorio pode ser encontrado no Github nesse endereço
 
 ## Precisão do chatbot
-- As perguntas devem ser detalhadas e feitas em inglês.
 - Treinamos apenas uma parte dos dados por questões de custo e tempo, mas o modelo pode ser treinado com o conjunto total de dados
 - A precisão do chatbot para responder as perguntas vai depender da quantidade de dados em que a rede foi treinada.
 
