@@ -48,7 +48,7 @@
                 "Quais as principais empresas que utilizam Python?"
             ],
             "respostas": [
-                "Instagram (utiliza Django como backend, um framework Pyrhon para a web) Google (grande parte do algoritmo de busca é escrito em Python) Spotify (o aplicativo é construído em Python) Netflix (utiliza muitas bibliotecas Python)"
+                "Instagram (utiliza Django como backend, um framework Pyrhon para a web) Google (grande parte do algoritmo de busca e escrito em Python) Spotify (o aplicativo e construído em Python) Netflix (utiliza muitas bibliotecas Python)"
             ]
         },
         {
@@ -57,7 +57,7 @@
                 "Em que o Python é usado no Data Science?"
             ],
             "respostas": [
-                "O Python é utilizado no data science em funções de Machine learning, visualização de dados e análise de dados"
+                "O Python e utilizado no data science em funcoes de Machine learning, visualização de dados e analise de dados"
             ]
         },
         {
@@ -67,7 +67,7 @@
                 "Para que serve o Python?"
             ],
             "respostas": [
-                "O Python é uma linguagem de programação de alto nível e muito versátil. Ela suporta tanto a programação orientada a objetos quanto a programação estruturada. Com Python, você pode acessar bibliotecas nativas que oferecem funcionalidades para desenvolvimento de projetos e implementação de aplicações complexas"
+                "O Python e uma linguagem de programação de alto nivel e muito versatil. Ela suporta tanto a programação orientada a objetos quanto a programacao estruturada. Com Python, você pode acessar bibliotecas nativas que oferecem funcionalidades para desenvolvimento de projetos e implementacao de aplicacoes complexas"
             ]
         },
         {
@@ -76,7 +76,7 @@
                 "Qual a vantagem de Python?"
             ],
             "respostas": [
-                "O Python é considerado uma linguagem de alto nível, pois é uma linguagem cuja sintaxe se aproxima mais da nossa linguagem e se distancia da linguagem de máquina. Além disso, possui um nível de abstração que possibilita o entendimento do código mais facilmente"
+                "O Python é considerado uma linguagem de alto nivel, pois é uma linguagem cuja sintaxe se aproxima mais da nossa linguagem e se distancia da linguagem de maquina. Alem disso, possui um nivel de abstracao que possibilita o entendimento do codigo mais facilmente"
             ]
         },
         {
@@ -85,7 +85,82 @@
                 "Qual a melhor linguagem Python ou r?"
             ],
             "respostas": [
-                "R é extremamente eficiente em análise de dados, devido seu grande número de pacotes com modelos, fórmulas e testes estatísticos. Python é ótima para criação de scripts e automatização de regras para mineração de dados. · Se integra facilmente em um fluxo de trabalho de produção de desenvolvimento."
+                "R e extremamente eficiente em análise de dados, devido seu grande numero de pacotes com modelos, formulas e testes estatisticos. Python e otima para criação de scripts e automatização de regras para mineracao de dados. Se integra facilmente em um fluxo de trabalho de producao de desenvolvimento."
+            ]
+        },
+        {
+            "tag": "Biblioteca",
+            "padroes": [
+                "Voce e desenvolvimento em qual biblioteca?"
+            ],
+            "respostas": [
+                "Tensorflow"
+            ]
+        },
+        {
+            "tag": "Origem",
+            "padroes": [
+                "De onde surgiu o nome Python?",
+                "Qual a origem do nome Python?"
+            ],
+            "respostas": [
+                "Ao contrario do que normalmente se pensa, a origem do nome da linguagem nao e a especie de serpente Piton e sim o grupo ingles de humoristas Monty Python. O uso da serpente como simbolo da linguagem se difundiu depois da publicação do ProgrammingPython da editora OReilly."
+            ]
+        },
+        {
+            "tag": "Criador",
+            "padroes": [
+                "Quem criou Python?"
+            ],
+            "respostas": [
+                "Python foi criada por Guido van Rossum"
+            ]
+        },
+        {
+            "tag": "Nascimento",
+            "padroes": [
+                "Em qual ano Python foi criado?"
+            ],
+            "respostas": [
+                "No ano de 1991"
+            ]
+        },
+        {
+            "tag": "Oficial",
+            "padroes": [
+                "Qual a pagina oficial do Python?"
+            ],
+            "respostas": [
+                "www.python.org"
+            ]
+        },
+        {
+            "tag": "Aprender",
+            "padroes": [
+                "Como posso aprender a programar em Python?",
+                "Cursos sobre Python?",
+                "Aprender Python?"
+            ],
+            "respostas": [
+                "https://www.youtube.com/watch?v=S9uPNppGsGo&list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0"
+            ]
+        },
+        {
+            "tag": "Filosofia",
+            "padroes": [
+                "Qual a filosofia do Python?"
+            ],
+            "respostas": [
+                "A linguagem foi projetada com a filosofia de enfatizar a importancia do esforco do programador sobre o esforco computacional."
+            ]
+        },
+        {
+            "tag": "Utilizacao",
+            "padroes": [
+                "Python e bastante usado?"
+            ],
+            "respostas": [
+                "Sim! Segundo o indice TIOBE, e a segunda linguagem de programacao mais popular do mundo"
             ]
         }
     ]
