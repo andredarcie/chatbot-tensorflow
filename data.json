@@ -1,25 +1,92 @@
 {
-    "questoes": 
-    [
+    "questoes": [
         {
             "tag": "compilacao",
-            "padroes": ["Python é compilada?", "Python usa um compilador?" ],
-            "respostas": ["Nao Python e uma linguagem interpretada. Voce pode tambem escrever bibliotecas Python utilizando C ou C++"]
+            "padroes": [
+                "Python é compilada?",
+                "Python usa um compilador?"
+            ],
+            "respostas": [
+                "Nao Python e uma linguagem interpretada. Voce pode tambem escrever bibliotecas Python utilizando C ou C++"
+            ]
         },
-        {  
+        {
             "tag": "ferramenta",
-            "padroes": ["Qual IDE utilizar?", "Qual ferramenta usar para programar?", "Qual editor de código usar?"],
-            "respostas": ["Nao ha uma real necessidade de uma IDE complexa e cheia de recursos para programar em Python. "]
+            "padroes": [
+                "Qual IDE utilizar?",
+                "Qual ferramenta usar para programar?",
+                "Qual editor de código usar?"
+            ],
+            "respostas": [
+                "Nao ha uma real necessidade de uma IDE complexa e cheia de recursos para programar em Python. "
+            ]
         },
         {
             "tag": "plataforma",
-            "padroes": ["Só roda no Linux?", "Quais sistemas operacionais Python é suportado"],
-            "respostas": ["Alem de multiplataforma e multiparadigma, com o Python voce e capaz de desenvolver para qualquer tipo de ambiente, seja desktop, web ou movel."]
+            "padroes": [
+                "Só roda no Linux?",
+                "Quais sistemas operacionais Python é suportado"
+            ],
+            "respostas": [
+                "Alem de multiplataforma e multiparadigma, com o Python voce e capaz de desenvolver para qualquer tipo de ambiente, seja desktop, web ou movel."
+            ]
         },
         {
             "tag": "web",
-            "padroes": ["Dá pra desenvolver Web em Python?", "Consigo criar sistemas web?" ],
-            "respostas": ["Python e excelente para desenvolver Web"]
+            "padroes": [
+                "Dá pra desenvolver Web em Python?",
+                "Consigo criar sistemas web?"
+            ],
+            "respostas": [
+                "Python e excelente para desenvolver Web"
+            ]
+        },
+        {
+            "tag": "Mercado",
+            "padroes": [
+                "Quem usa o Python?",
+                "Quais as principais empresas que utilizam Python?"
+            ],
+            "respostas": [
+                "Instagram (utiliza Django como backend, um framework Pyrhon para a web) Google (grande parte do algoritmo de busca é escrito em Python) Spotify (o aplicativo é construído em Python) Netflix (utiliza muitas bibliotecas Python)"
+            ]
+        },
+        {
+            "tag": "DataScience",
+            "padroes": [
+                "Em que o Python é usado no Data Science?"
+            ],
+            "respostas": [
+                "O Python é utilizado no data science em funções de Machine learning, visualização de dados e análise de dados"
+            ]
+        },
+        {
+            "tag": "Python",
+            "padroes": [
+                "O que é Python",
+                "Para que serve o Python?"
+            ],
+            "respostas": [
+                "O Python é uma linguagem de programação de alto nível e muito versátil. Ela suporta tanto a programação orientada a objetos quanto a programação estruturada. Com Python, você pode acessar bibliotecas nativas que oferecem funcionalidades para desenvolvimento de projetos e implementação de aplicações complexas"
+            ]
+        },
+        {
+            "tag": "Vantagem",
+            "padroes": [
+                "Qual a vantagem de Python?"
+            ],
+            "respostas": [
+                "O Python é considerado uma linguagem de alto nível, pois é uma linguagem cuja sintaxe se aproxima mais da nossa linguagem e se distancia da linguagem de máquina. Além disso, possui um nível de abstração que possibilita o entendimento do código mais facilmente"
+            ]
+        },
+        {
+            "tag": "Comparacao",
+            "padroes": [
+                "Qual a melhor linguagem Python ou r?"
+            ],
+            "respostas": [
+                "R é extremamente eficiente em análise de dados, devido seu grande número de pacotes com modelos, fórmulas e testes estatísticos. Python é ótima para criação de scripts e automatização de regras para mineração de dados. · Se integra facilmente em um fluxo de trabalho de produção de desenvolvimento."
+            ]
         }
     ]
 }
