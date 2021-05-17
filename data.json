@@ -57,7 +57,7 @@
                 "Em que o Python é usado no Data Science?"
             ],
             "respostas": [
-                "O Python e utilizado no data science em funcoes de Machine learning, visualização de dados e analise de dados"
+                "O Python e utilizado no data science em funcoes de Machine learning, visualizacao de dados e analise de dados"
             ]
         },
         {
@@ -67,7 +67,7 @@
                 "Para que serve o Python?"
             ],
             "respostas": [
-                "O Python e uma linguagem de programação de alto nivel e muito versatil. Ela suporta tanto a programação orientada a objetos quanto a programacao estruturada. Com Python, você pode acessar bibliotecas nativas que oferecem funcionalidades para desenvolvimento de projetos e implementacao de aplicacoes complexas"
+                "O Python e uma linguagem de programacao de alto nivel e muito versatil. Ela suporta tanto a programação orientada a objetos quanto a programacao estruturada. Com Python, voce pode acessar bibliotecas nativas que oferecem funcionalidades para desenvolvimento de projetos e implementacao de aplicacoes complexas"
             ]
         },
         {
@@ -76,7 +76,7 @@
                 "Qual a vantagem de Python?"
             ],
             "respostas": [
-                "O Python é considerado uma linguagem de alto nivel, pois é uma linguagem cuja sintaxe se aproxima mais da nossa linguagem e se distancia da linguagem de maquina. Alem disso, possui um nivel de abstracao que possibilita o entendimento do codigo mais facilmente"
+                "O Python e considerado uma linguagem de alto nivel, pois e uma linguagem cuja sintaxe se aproxima mais da nossa linguagem e se distancia da linguagem de maquina. Alem disso, possui um nivel de abstracao que possibilita o entendimento do codigo mais facilmente"
             ]
         },
         {
@@ -85,7 +85,7 @@
                 "Qual a melhor linguagem Python ou r?"
             ],
             "respostas": [
-                "R e extremamente eficiente em análise de dados, devido seu grande numero de pacotes com modelos, formulas e testes estatisticos. Python e otima para criação de scripts e automatização de regras para mineracao de dados. Se integra facilmente em um fluxo de trabalho de producao de desenvolvimento."
+                "R e extremamente eficiente em analise de dados, devido seu grande numero de pacotes com modelos, formulas e testes estatisticos. Python e otima para criação de scripts e automatização de regras para mineracao de dados. Se integra facilmente em um fluxo de trabalho de producao de desenvolvimento."
             ]
         },
         {
